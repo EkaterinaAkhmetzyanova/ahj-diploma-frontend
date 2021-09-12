@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    margin-right: auto;
+    margin-left: auto;
+    border: solid 1px black;
+    text-align: center;
+    background-color: rgb(238, 237, 238);
+}
+
+.chaos-container {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    width: 700px;
+    height: 100vh;
+    border: solid 1px black;
+}
+
+.chaos-main {
+    width: 400px;
+    height: 100vh;
+    padding: 8px;
+    border: solid 1px black;
+}
+
+.chaos-messages {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: solid 1px black;
+    background-color: rgb(238, 237, 238);
+    overflow: scroll;
+}
+
+.chaos-message {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: solid 1px black;
+    background-color: white;
+    
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.chaos-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.chaos-input {
+    width: 80%;
+    height: 50px;
+}
+
+.chaos-input-file {
+    display: none;
+}
+
+.search-form {
+    margin-bottom: 10px;
+}
+
+.chaos-media {
+    width: 300px;
+    padding: 10px;
+    border: solid 1px black;
+}
+
+.chaos-video, .chaos-img {
+    width: 100%;
+}
+
+.msg-form {
+    display: flex;
+}
+
+.chaos-clip-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/paper-clip.png');
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.chaos-geo-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/free-icon-map-165373.png');
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.chaos-search-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/loupe.png');
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.chaos-fav-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/heart.png');
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.chaos-fav-icon:hover {
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/heart_red.png');
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.media-list {
+    list-style-type: none;
+}
+
+.media-category {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8px;
+    padding: 8px;
+    border: solid 1px black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.media-category:hover {
+    background-color: rgb(206, 209, 209);
+}
+
+.category-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+
+.dnd-box {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    width: 700px;
+    height: 350px;
+    background-color: white;
+    opacity: 0.8;
+    border: dashed 5px rgb(52, 156, 241);
+}
+
+.dnd-area {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.dnd-text {
+    display: block;
+    margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-size: x-large;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
