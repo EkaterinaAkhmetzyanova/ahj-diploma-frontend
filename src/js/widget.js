@@ -52,7 +52,7 @@ export default class Widget {
       this.serverCommands(event);
     });
     this.ws.addEventListener('close', (e) => {
-      console.log(`Ошибка соединения - ${e.code}`);
+      console.log(`Ошибка соединения - ${e.code} - ${e.reason}`);
     });
     this.ws.addEventListener('error', (e) => {
       console.log(`Ошибка соединения - ${e.code} - ${e.reason}`);
@@ -109,13 +109,13 @@ export default class Widget {
 
   serverCommands(event) {
     const item = JSON.parse(event.data);
+    console.log(item);
     if (item.command === 'loadLatest') {
       item.data.forEach((el) => {
         this.msgContainer.insertAdjacentElement('beforeend', this.getMessage(el));
       });
     } else if (item.command === 'newMessage' || item.command === 'sendGeo') {
-      this.msgContainer.insertAdjacentElement('afterbegin', this.getMessage(item));
-      console.log(item.data);
+      this.msgContainer.insertAdjacentElement('afterbegin', this.getMessage(item.data));
     } else if (item.command === 'msgSearch') {
       item.data.forEach((el) => {
         this.msgContainer.insertAdjacentElement('afterbegin', this.getMessage(el));
@@ -123,11 +123,9 @@ export default class Widget {
     } else if (item.command === 'getCategory') {
       item.data.forEach((el) => {
         this.msgContainer.insertAdjacentElement('afterbegin', this.getMessage(el));
-        console.log(el);
       });
     } else if (item.command === 'categoriesNum') {
       this.showCategories(item.data);
-      console.log(item.data);
     }
   }
 
@@ -151,9 +149,7 @@ export default class Widget {
   }
 
   sendMsg(message) {
-    if (this.ws.readyState === 1) {
-      this.ws.send(message);
-    }
+    this.ws.send(message);
   }
 
   onSubmit(event) {
@@ -165,7 +161,6 @@ export default class Widget {
       command: 'newMessage',
       message: this.textInput.value,
     };
-    console.log(data.message);
     this.ws.send(JSON.stringify(data));
     this.textInput.value = '';
   }
@@ -216,7 +211,6 @@ export default class Widget {
         text.innerHTML = link;
       } else {
         text.textContent = element.message;
-        console.log(element.message);
       }
     }
 
